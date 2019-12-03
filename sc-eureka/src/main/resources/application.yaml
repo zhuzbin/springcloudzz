@@ -1,0 +1,18 @@
+server:
+  port: 7001
+eureka:
+  instance:
+    hostname: a.com
+  server:
+    eviction-interval-timer-in-ms: 1000
+    enable-self-preservation: false
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://admin:enjoy@a.com:7001/eureka,http://admin:enjoy@b.com:7002/eureka,http://admin:enjoy@c.com:7003/eureka
+spring:
+  security:
+    user:
+      name: admin
+      password: enjoy
