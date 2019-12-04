@@ -18,8 +18,9 @@
         <module>sc-eureka2</module>
         <module>sc-ribbon</module>
         <module>sc-feign</module>
-        <module>sc-feign-provider</module>
         <module>sc-eureka-provider</module>
+        <module>sc-eureka-provider1</module>
+        <module>sc-service</module>
     </modules>
     <properties>
         <jdk.version>1.8</jdk.version>
@@ -52,6 +53,11 @@
             <dependency>
                 <groupId>com.sc</groupId>
                 <artifactId>sc-security</artifactId>
+                <version>1.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sc</groupId>
+                <artifactId>sc-service</artifactId>
                 <version>1.0.0</version>
             </dependency>
         </dependencies>

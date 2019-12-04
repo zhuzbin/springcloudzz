@@ -1,16 +1,13 @@
 package com.controller;
 
-import com.entity.Product;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import com.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 /**
  * Created by root on 2019/12/2.
@@ -20,14 +17,18 @@ import org.springframework.web.client.RestTemplate;
 public class ProductController {
 
     @Autowired
-    private IProductService productClientService;
+    private IProductService productService;
+
+    @Autowired
+    private DiscoveryClient client;
 
     @RequestMapping("/get/{id}")
     public Object get(@PathVariable("id")long id) {
-        //加入了用户名密码的验证
-        Product product = (Product)productClientService.get(id);
-        return product;
+        return productService.get(id) ;
     }
 
-
+    @RequestMapping("/discover")
+    public Object discover() { // 直接返回发现服务信息
+        return this.client ;
+    }
 }

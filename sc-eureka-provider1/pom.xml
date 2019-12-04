@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.sc</groupId>
-    <artifactId>sc-feign</artifactId>
+    <artifactId>sc-eureka-provider1</artifactId>
     <version>1.0.0</version>
 
     <dependencies>
@@ -32,18 +32,18 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-security</artifactId>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>com.sc</groupId>
+            <artifactId>sc-security</artifactId>
+            <version>1.0.0</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.sc</groupId>
-            <artifactId>sc-service</artifactId>
-            <version>1.0.0</version>
         </dependency>
     </dependencies>
 
